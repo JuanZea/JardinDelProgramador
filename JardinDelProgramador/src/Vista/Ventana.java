@@ -8,8 +8,10 @@ package Vista;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * Esta clase es la principal representacion del programa de manera visual.
  * @author JuanZea
+ * @version 1.0.1
+ * @since Jardin 1.0.0
  */
 public class Ventana extends javax.swing.JFrame {
     
@@ -34,19 +36,43 @@ public class Ventana extends javax.swing.JFrame {
         jLabelFondo3 = new javax.swing.JLabel();
         jPanelProfesores = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabelNombreLista = new javax.swing.JLabel();
-        jLabelNombreDescripcion = new javax.swing.JLabel();
+        jLabelListaProfesores = new javax.swing.JLabel();
+        jLabelDescripcionProfesores = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListProfesores = new javax.swing.JList<>();
         jButtonAñadirProfesor = new javax.swing.JButton();
         jButtonEliminarProfesor = new javax.swing.JButton();
-        jButtonEditarProfesor1 = new javax.swing.JButton();
+        jButtonEditarProfesor = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaProfesor = new javax.swing.JTextArea();
         jLabelFondo2 = new javax.swing.JLabel();
+        jPanelNiños = new javax.swing.JPanel();
+        jPanelNiños1 = new javax.swing.JPanel();
+        jButtonAñadirNiño = new javax.swing.JButton();
+        jButtonEditarNiño = new javax.swing.JButton();
+        jButtonEliminarNiño = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jListNiños = new javax.swing.JList<>();
+        jLabelListaNiño = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextAreaNiños = new javax.swing.JTextArea();
+        jLabelDescripcionNiño = new javax.swing.JLabel();
+        jLabelFondo4 = new javax.swing.JLabel();
+        jPanelAcudientes = new javax.swing.JPanel();
+        jPanelAcudientes1 = new javax.swing.JPanel();
+        jLabelListaAcudientes = new javax.swing.JLabel();
+        jLabelDescripcionAcudientes = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jListAcudientes = new javax.swing.JList<>();
+        jButtonAñadirAcudiente = new javax.swing.JButton();
+        jButtonEliminarAcudiente = new javax.swing.JButton();
+        jButtonEditarAcudiente = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextAreaAcudientes = new javax.swing.JTextArea();
+        jLabelFondo5 = new javax.swing.JLabel();
         jPanelConfiguracion = new javax.swing.JPanel();
         jPanelConfiguracion1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButtonAcercaDe = new javax.swing.JButton();
         jLabelNombre = new javax.swing.JLabel();
         jLabelCaracter = new javax.swing.JLabel();
         jLabelAño = new javax.swing.JLabel();
@@ -58,8 +84,8 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldDireccion = new javax.swing.JTextField();
         jTextFieldNit = new javax.swing.JTextField();
         jTextFieldMatriculados = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonLimpiarConfiguracion = new javax.swing.JButton();
+        jButtonGuardarConfiguracion = new javax.swing.JButton();
         jTextFieldNombre = new javax.swing.JTextField();
         jLabelFondo1 = new javax.swing.JLabel();
 
@@ -103,34 +129,29 @@ public class Ventana extends javax.swing.JFrame {
 
         jPanel2.setOpaque(false);
 
-        jLabelNombreLista.setBackground(java.awt.Color.orange);
-        jLabelNombreLista.setForeground(java.awt.Color.black);
-        jLabelNombreLista.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombreLista.setText("LISTA DE PROFESORES");
-        jLabelNombreLista.setOpaque(true);
+        jLabelListaProfesores.setBackground(java.awt.Color.orange);
+        jLabelListaProfesores.setForeground(java.awt.Color.black);
+        jLabelListaProfesores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelListaProfesores.setText("LISTA DE PROFESORES");
+        jLabelListaProfesores.setOpaque(true);
 
-        jLabelNombreDescripcion.setBackground(java.awt.Color.orange);
-        jLabelNombreDescripcion.setForeground(java.awt.Color.black);
-        jLabelNombreDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelNombreDescripcion.setText("LISTA DE PROFESORES");
-        jLabelNombreDescripcion.setOpaque(true);
+        jLabelDescripcionProfesores.setBackground(java.awt.Color.orange);
+        jLabelDescripcionProfesores.setForeground(java.awt.Color.black);
+        jLabelDescripcionProfesores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDescripcionProfesores.setText("DESCRIPCION");
+        jLabelDescripcionProfesores.setOpaque(true);
 
-        jListProfesores.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jListProfesoresValueChanged(evt);
-            }
-        });
         jScrollPane1.setViewportView(jListProfesores);
 
         jButtonAñadirProfesor.setText("Añadir");
 
         jButtonEliminarProfesor.setText("Eliminar");
 
-        jButtonEditarProfesor1.setText("Editar");
+        jButtonEditarProfesor.setText("Editar");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextAreaProfesor.setColumns(20);
+        jTextAreaProfesor.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaProfesor);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -140,19 +161,19 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(jLabelNombreLista, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelListaProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonEliminarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonEditarProfesor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonEditarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonAñadirProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                    .addComponent(jLabelNombreDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabelDescripcionProfesores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -161,18 +182,18 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabelNombreDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelDescripcionProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabelNombreLista, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelListaProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButtonAñadirProfesor)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButtonEditarProfesor1)
+                                .addComponent(jButtonEditarProfesor)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButtonEliminarProfesor)))))
                 .addContainerGap(16, Short.MAX_VALUE))
@@ -187,6 +208,172 @@ public class Ventana extends javax.swing.JFrame {
 
         jTabbedPanePrincipal.addTab("Profesores      ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono3.png")), jPanelProfesores); // NOI18N
 
+        jPanelNiños.setLayout(null);
+
+        jPanelNiños1.setOpaque(false);
+
+        jButtonAñadirNiño.setText("Añadir");
+
+        jButtonEditarNiño.setText("Editar");
+
+        jButtonEliminarNiño.setText("Eliminar");
+
+        jScrollPane3.setViewportView(jListNiños);
+
+        jLabelListaNiño.setBackground(java.awt.Color.orange);
+        jLabelListaNiño.setForeground(java.awt.Color.black);
+        jLabelListaNiño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelListaNiño.setText("LISTA DE NIÑOS");
+        jLabelListaNiño.setOpaque(true);
+
+        jTextAreaNiños.setColumns(20);
+        jTextAreaNiños.setRows(5);
+        jScrollPane4.setViewportView(jTextAreaNiños);
+
+        jLabelDescripcionNiño.setBackground(java.awt.Color.orange);
+        jLabelDescripcionNiño.setForeground(java.awt.Color.black);
+        jLabelDescripcionNiño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDescripcionNiño.setText("DESCRIPCION");
+        jLabelDescripcionNiño.setOpaque(true);
+
+        javax.swing.GroupLayout jPanelNiños1Layout = new javax.swing.GroupLayout(jPanelNiños1);
+        jPanelNiños1.setLayout(jPanelNiños1Layout);
+        jPanelNiños1Layout.setHorizontalGroup(
+            jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabelListaNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonEliminarNiño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonEditarNiño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAñadirNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(jLabelDescripcionNiño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        jPanelNiños1Layout.setVerticalGroup(
+            jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                        .addComponent(jLabelDescripcionNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                        .addComponent(jLabelListaNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                                .addComponent(jButtonAñadirNiño)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonEditarNiño)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonEliminarNiño)))))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanelNiños.add(jPanelNiños1);
+        jPanelNiños1.setBounds(0, 0, 660, 390);
+
+        jLabelFondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo4.png"))); // NOI18N
+        jPanelNiños.add(jLabelFondo4);
+        jLabelFondo4.setBounds(0, 0, 660, 400);
+
+        jTabbedPanePrincipal.addTab("Niños                ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono4.png")), jPanelNiños); // NOI18N
+
+        jPanelAcudientes.setLayout(null);
+
+        jPanelAcudientes1.setOpaque(false);
+
+        jLabelListaAcudientes.setBackground(java.awt.Color.orange);
+        jLabelListaAcudientes.setForeground(java.awt.Color.black);
+        jLabelListaAcudientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelListaAcudientes.setText("LISTA DE ACUDIENTES");
+        jLabelListaAcudientes.setOpaque(true);
+
+        jLabelDescripcionAcudientes.setBackground(java.awt.Color.orange);
+        jLabelDescripcionAcudientes.setForeground(java.awt.Color.black);
+        jLabelDescripcionAcudientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDescripcionAcudientes.setText("DESCRIPCION");
+        jLabelDescripcionAcudientes.setOpaque(true);
+
+        jScrollPane5.setViewportView(jListAcudientes);
+
+        jButtonAñadirAcudiente.setText("Añadir");
+
+        jButtonEliminarAcudiente.setText("Eliminar");
+
+        jButtonEditarAcudiente.setText("Editar");
+
+        jTextAreaAcudientes.setColumns(20);
+        jTextAreaAcudientes.setRows(5);
+        jScrollPane6.setViewportView(jTextAreaAcudientes);
+
+        javax.swing.GroupLayout jPanelAcudientes1Layout = new javax.swing.GroupLayout(jPanelAcudientes1);
+        jPanelAcudientes1.setLayout(jPanelAcudientes1Layout);
+        jPanelAcudientes1Layout.setHorizontalGroup(
+            jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabelListaAcudientes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButtonEliminarAcudiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonEditarAcudiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonAñadirAcudiente, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                    .addComponent(jLabelDescripcionAcudientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        jPanelAcudientes1Layout.setVerticalGroup(
+            jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                        .addComponent(jLabelDescripcionAcudientes, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                        .addComponent(jLabelListaAcudientes, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                                .addComponent(jButtonAñadirAcudiente)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonEditarAcudiente)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonEliminarAcudiente)))))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanelAcudientes.add(jPanelAcudientes1);
+        jPanelAcudientes1.setBounds(0, 0, 660, 390);
+
+        jLabelFondo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Fondo5.png"))); // NOI18N
+        jPanelAcudientes.add(jLabelFondo5);
+        jLabelFondo5.setBounds(0, 0, 660, 400);
+
+        jTabbedPanePrincipal.addTab("Acudientes     ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono5.png")), jPanelAcudientes); // NOI18N
+
         jPanelConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanelConfiguracion.setPreferredSize(new java.awt.Dimension(700, 400));
         jPanelConfiguracion.setLayout(null);
@@ -194,7 +381,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanelConfiguracion1.setMinimumSize(new java.awt.Dimension(700, 400));
         jPanelConfiguracion1.setOpaque(false);
 
-        jButton1.setText("Acerca De");
+        jButtonAcercaDe.setText("Acerca De");
 
         jLabelNombre.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabelNombre.setForeground(java.awt.Color.black);
@@ -228,14 +415,14 @@ public class Ventana extends javax.swing.JFrame {
 
         jTextFieldNit.setToolTipText("Ejemplo: 830047819");
 
-        jTextFieldMatriculados.setEditable(false);
         jTextFieldMatriculados.setText("0");
+        jTextFieldMatriculados.setEnabled(false);
 
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton2.setText("Limpiar");
+        jButtonLimpiarConfiguracion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonLimpiarConfiguracion.setText("Limpiar");
 
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton3.setText("Guardar");
+        jButtonGuardarConfiguracion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonGuardarConfiguracion.setText("Guardar");
 
         jTextFieldNombre.setText("El jardín de los programadores");
 
@@ -245,13 +432,13 @@ public class Ventana extends javax.swing.JFrame {
             jPanelConfiguracion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConfiguracion1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonAcercaDe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addGroup(jPanelConfiguracion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelConfiguracion1Layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonGuardarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonLimpiarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelConfiguracion1Layout.createSequentialGroup()
                         .addGroup(jPanelConfiguracion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelAño)
@@ -299,10 +486,10 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jTextFieldMatriculados))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelConfiguracion1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonLimpiarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonGuardarConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(jButtonAcercaDe)
                 .addGap(19, 19, 19))
         );
 
@@ -331,10 +518,6 @@ public class Ventana extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jListProfesoresValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListProfesoresValueChanged
-        
-    }//GEN-LAST:event_jListProfesoresValueChanged
 
     /**
      * @param args the command line arguments
@@ -373,34 +556,58 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonAcercaDe;
+    private javax.swing.JButton jButtonAñadirAcudiente;
+    private javax.swing.JButton jButtonAñadirNiño;
     private javax.swing.JButton jButtonAñadirProfesor;
-    private javax.swing.JButton jButtonEditarProfesor1;
+    private javax.swing.JButton jButtonEditarAcudiente;
+    private javax.swing.JButton jButtonEditarNiño;
+    private javax.swing.JButton jButtonEditarProfesor;
+    private javax.swing.JButton jButtonEliminarAcudiente;
+    private javax.swing.JButton jButtonEliminarNiño;
     private javax.swing.JButton jButtonEliminarProfesor;
+    private javax.swing.JButton jButtonGuardarConfiguracion;
+    private javax.swing.JButton jButtonLimpiarConfiguracion;
     private javax.swing.JLabel jLabelAño;
     private javax.swing.JLabel jLabelCaracter;
+    private javax.swing.JLabel jLabelDescripcionAcudientes;
+    private javax.swing.JLabel jLabelDescripcionNiño;
+    private javax.swing.JLabel jLabelDescripcionProfesores;
     private javax.swing.JLabel jLabelDireccion;
     private javax.swing.JLabel jLabelFondo1;
     private javax.swing.JLabel jLabelFondo2;
     private javax.swing.JLabel jLabelFondo3;
+    private javax.swing.JLabel jLabelFondo4;
+    private javax.swing.JLabel jLabelFondo5;
+    private javax.swing.JLabel jLabelListaAcudientes;
+    private javax.swing.JLabel jLabelListaNiño;
+    private javax.swing.JLabel jLabelListaProfesores;
     private javax.swing.JLabel jLabelMatriculados;
     private javax.swing.JLabel jLabelNit;
     private javax.swing.JLabel jLabelNombre;
-    private javax.swing.JLabel jLabelNombreDescripcion;
-    private javax.swing.JLabel jLabelNombreLista;
+    private javax.swing.JList<String> jListAcudientes;
+    private javax.swing.JList<String> jListNiños;
     private javax.swing.JList<String> jListProfesores;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelAcudientes;
+    private javax.swing.JPanel jPanelAcudientes1;
     private javax.swing.JPanel jPanelConfiguracion;
     private javax.swing.JPanel jPanelConfiguracion1;
     private javax.swing.JPanel jPanelMenuPrincipal;
+    private javax.swing.JPanel jPanelNiños;
+    private javax.swing.JPanel jPanelNiños1;
     private javax.swing.JPanel jPanelProfesores;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPanePrincipal;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaAcudientes;
+    private javax.swing.JTextArea jTextAreaNiños;
+    private javax.swing.JTextArea jTextAreaProfesor;
     private javax.swing.JTextField jTextFieldAño;
     private javax.swing.JTextField jTextFieldCaracter;
     private javax.swing.JTextField jTextFieldDireccion;
@@ -435,5 +642,73 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JList<String> getjListProfesores() {
         return jListProfesores;
+    }
+
+    public javax.swing.JButton getjButtonAcercaDe() {
+        return jButtonAcercaDe;
+    }
+
+    public javax.swing.JButton getjButtonGuardarConfiguracion() {
+        return jButtonGuardarConfiguracion;
+    }
+
+    public javax.swing.JButton getjButtonLimpiarConfiguracion() {
+        return jButtonLimpiarConfiguracion;
+    }
+
+    public javax.swing.JButton getjButtonEditarProfesor() {
+        return jButtonEditarProfesor;
+    }
+
+    public javax.swing.JButton getjButtonEliminarProfesor() {
+        return jButtonEliminarProfesor;
+    }
+
+    public javax.swing.JTextArea getjTextAreaProfesor() {
+        return jTextAreaProfesor;
+    }
+
+    public javax.swing.JButton getjButtonAñadirNiño() {
+        return jButtonAñadirNiño;
+    }
+
+    public javax.swing.JButton getjButtonEditarNiño() {
+        return jButtonEditarNiño;
+    }
+
+    public javax.swing.JButton getjButtonEliminarNiño() {
+        return jButtonEliminarNiño;
+    }
+
+    public javax.swing.JList<String> getjListNiños() {
+        return jListNiños;
+    }
+
+    public javax.swing.JTextArea getjTextAreaNiños() {
+        return jTextAreaNiños;
+    }
+
+    public javax.swing.JTextField getjTextFieldMatriculados() {
+        return jTextFieldMatriculados;
+    }
+
+    public javax.swing.JButton getjButtonAñadirAcudiente() {
+        return jButtonAñadirAcudiente;
+    }
+
+    public javax.swing.JButton getjButtonEditarAcudiente() {
+        return jButtonEditarAcudiente;
+    }
+
+    public javax.swing.JButton getjButtonEliminarAcudiente() {
+        return jButtonEliminarAcudiente;
+    }
+
+    public javax.swing.JList<String> getjListAcudientes() {
+        return jListAcudientes;
+    }
+
+    public javax.swing.JTextArea getjTextAreaAcudientes() {
+        return jTextAreaAcudientes;
     }
 }
