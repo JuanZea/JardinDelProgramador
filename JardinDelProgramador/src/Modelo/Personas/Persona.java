@@ -11,13 +11,13 @@ public class Persona {
 
     private String nombre;
     private String tipoDeDocumento;
-    private int id;
-    private int edad;
+    private String id;
+    private String edad;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String tipoDeDocumento, int id, int edad) {
+    public Persona(String nombre, String tipoDeDocumento, String id, String edad) {
         this.nombre = nombre;
         this.tipoDeDocumento = tipoDeDocumento;
         this.id = id;
@@ -40,19 +40,19 @@ public class Persona {
         this.tipoDeDocumento = tipoDeDocumento;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 }

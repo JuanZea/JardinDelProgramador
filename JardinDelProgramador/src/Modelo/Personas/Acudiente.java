@@ -19,7 +19,7 @@ public class Acudiente extends Persona {
     public Acudiente() {
     }
 
-    public Acudiente(String horarioDeRecogida, String parentesco, String direccion, String celular, String nombre, String tipoDeDocumento, int id, int edad) {
+    public Acudiente(String horarioDeRecogida, String parentesco, String direccion, String celular, String nombre, String tipoDeDocumento, String id, String edad) {
         super(nombre, tipoDeDocumento, id, edad);
         this.horarioDeRecogida = horarioDeRecogida;
         this.parentesco = parentesco;

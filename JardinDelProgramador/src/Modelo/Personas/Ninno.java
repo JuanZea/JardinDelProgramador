@@ -17,7 +17,7 @@ public class Ninno extends Persona {
     public Ninno() {
     }
 
-    public Ninno(Double talla, Double peso, String situacionEspecial, String nombre, String tipoDeDocumento, int id, int edad) {
+    public Ninno(Double talla, Double peso, String situacionEspecial, String nombre, String tipoDeDocumento, String id, String edad) {
         super(nombre, tipoDeDocumento, id, edad);
         this.talla = talla;
         this.peso = peso;
