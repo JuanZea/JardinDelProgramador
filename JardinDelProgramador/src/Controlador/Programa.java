@@ -21,7 +21,7 @@ import javax.swing.event.ListSelectionListener;
  * una de las clases vitales.
  *
  * @author JuanZea
- * @version 1.0.1
+ * @version 1.0.2
  * @since Jardin 1.0.0
  */
 public class Programa {
@@ -32,6 +32,7 @@ public class Programa {
     static DefaultListModel listaNiños = new DefaultListModel();
     static ArrayList<Acudiente> acudientes = new ArrayList<Acudiente>();
     static DefaultListModel listaAcudientes = new DefaultListModel();
+    static ArrayList<Logro> logros = new ArrayList<Logro>();
     static Boolean isConfigurado = false;
 
     /**
@@ -49,6 +50,41 @@ public class Programa {
         //Se crea una ventana principal para la interaccion con el usuario
         Ventana ven1 = new Ventana();
         ven1.setVisible(true);
+
+        //Eventos y variables de la pestaña Menu Principal|--------------------------------
+        ven1.getjButtonAsignarLogro().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AsignarLogro v1 = new AsignarLogro(null, true);
+                v1.rellenarEstudiantes(niños);
+                v1.setVisible(true);
+                if (v1.isSeñal()) {
+                    Logro l1 = v1.getLogro();
+                    logros.add(l1);
+                    int dueño = v1.getDueño();
+                    niños.get(dueño).añadirLogro(l1);
+                }
+            }
+        });
+
+        ven1.getjButtonGenerarReporte().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GenerarReporte v1 = new GenerarReporte(null, true);
+                v1.setArrays(niños, profesores, logros);
+                v1.rellenarBoxes();
+                v1.setVisible(true);
+                if (v1.isSeñal()) {
+                    Registro r1 = v1.getRegistro();
+                    registrar(r1);
+                    boolean[] pos = r1.getNiño().buscarDesempeño();
+                    for (boolean po : pos) {
+                        System.out.println(po);
+                    }
+                }
+            }
+        });
+        //---------------------------------------------------------------------------------
 
         //Eventos y variables de la pestaña Configuracion|---------------------------------
         ven1.getjButtonGuardarConfiguracion().addActionListener(new ActionListener() {
@@ -151,7 +187,8 @@ public class Programa {
             }
         });
         //---------------------------------------------------------------------------------
-        //Eventos la pestaña Niños|---------------------------------------------------
+
+        //Eventos la pestaña Niños|--------------------------------------------------------
         ven1.getjListNiños().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -211,7 +248,8 @@ public class Programa {
             }
         });
         //---------------------------------------------------------------------------------
-        //Eventos la pestaña Acudiente|---------------------------------------------------
+
+        //Eventos la pestaña Acudiente|-----------------------------------------------------
         ven1.getjListAcudientes().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -267,6 +305,24 @@ public class Programa {
             }
         });
         //---------------------------------------------------------------------------------
+    }
+
+    public static void registrar(Registro r) {
+        boolean ag = false;
+        Registro[] registros = r.getNiño().getRegistros();
+        if (registros[r.getMes()] == null || registros[r.getMes()].getAño() < r.getAño() || (registros[r.getMes()].getDia() < r.getDia() && registros[r.getMes()].getAño() <= r.getAño())) {
+            registros[r.getMes()] = r;
+        } else {
+            for (int i = 0; i < registros[r.getMes()].getLogros().size(); i++) {
+                if (r.getLogros().get(0) != registros[r.getMes()].getLogros().get(i)) {
+                    ag = true;
+                }
+            }
+            if (ag) {
+                registros[r.getMes()].getLogros().add(r.getLogros().get(0));
+            }
+        }
+        r.getNiño().setRegistros(registros);
     }
 
     public static void setIsConfigurado(boolean b) {
@@ -360,7 +416,7 @@ public class Programa {
                 + "\ny su situacion especial es: " + Situacion;
         return desc;
     }
-    
+
     public static Acudiente añadirAcudiente() {
         AñadirAcudiente v1 = new AñadirAcudiente(new javax.swing.JFrame(), true);
         v1.setVisible(true);

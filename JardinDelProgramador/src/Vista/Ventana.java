@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 /**
  * Esta clase es la principal representacion del programa de manera visual.
  * @author JuanZea
- * @version 1.0.1
+ * @version 1.0.2
  * @since Jardin 1.0.0
  */
 public class Ventana extends javax.swing.JFrame {
@@ -33,6 +33,9 @@ public class Ventana extends javax.swing.JFrame {
         jTabbedPanePrincipal = new javax.swing.JTabbedPane();
         jPanelMenuPrincipal = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jButtonGenerarReporte = new javax.swing.JButton();
+        jButtonAsignarLogro = new javax.swing.JButton();
+        jButtonImprimirReporte = new javax.swing.JButton();
         jLabelFondo3 = new javax.swing.JLabel();
         jPanelProfesores = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -105,15 +108,34 @@ public class Ventana extends javax.swing.JFrame {
 
         jPanel1.setOpaque(false);
 
+        jButtonGenerarReporte.setText("Generar Reporte");
+
+        jButtonAsignarLogro.setText("Asignar Logro");
+
+        jButtonImprimirReporte.setText("Imprimir Reporte");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jButtonAsignarLogro, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(jButtonGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(jButtonImprimirReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonGenerarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAsignarLogro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonImprimirReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
 
         jPanelMenuPrincipal.add(jPanel1);
@@ -289,7 +311,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanelNiños.add(jLabelFondo4);
         jLabelFondo4.setBounds(0, 0, 660, 400);
 
-        jTabbedPanePrincipal.addTab("Niños                ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono4.png")), jPanelNiños); // NOI18N
+        jTabbedPanePrincipal.addTab("Niños                ", new javax.swing.ImageIcon(getClass().getResource("/Vista/img/Icono6.png")), jPanelNiños); // NOI18N
 
         jPanelAcudientes.setLayout(null);
 
@@ -557,6 +579,7 @@ public class Ventana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAcercaDe;
+    private javax.swing.JButton jButtonAsignarLogro;
     private javax.swing.JButton jButtonAñadirAcudiente;
     private javax.swing.JButton jButtonAñadirNiño;
     private javax.swing.JButton jButtonAñadirProfesor;
@@ -566,7 +589,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEliminarAcudiente;
     private javax.swing.JButton jButtonEliminarNiño;
     private javax.swing.JButton jButtonEliminarProfesor;
+    private javax.swing.JButton jButtonGenerarReporte;
     private javax.swing.JButton jButtonGuardarConfiguracion;
+    private javax.swing.JButton jButtonImprimirReporte;
     private javax.swing.JButton jButtonLimpiarConfiguracion;
     private javax.swing.JLabel jLabelAño;
     private javax.swing.JLabel jLabelCaracter;
@@ -710,5 +735,13 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JTextArea getjTextAreaAcudientes() {
         return jTextAreaAcudientes;
+    }
+
+    public javax.swing.JButton getjButtonGenerarReporte() {
+        return jButtonGenerarReporte;
+    }
+
+    public javax.swing.JButton getjButtonAsignarLogro() {
+        return jButtonAsignarLogro;
     }
 }
