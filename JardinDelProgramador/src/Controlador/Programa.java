@@ -26,6 +26,7 @@ import javax.swing.event.ListSelectionListener;
  */
 public class Programa {
 
+    //Se crea un conjunto de ArrayLists para cada tipo de persona.
     static ArrayList<Profesor> profesores = new ArrayList<Profesor>();
     static DefaultListModel listaProfesores = new DefaultListModel();
     static ArrayList<Niño> niños = new ArrayList<Niño>();
@@ -39,11 +40,11 @@ public class Programa {
      * El metodo principal del programa, donde reside la mayor parte de la
      * logica.
      *
-     * @param args Por default
+     * @param args Los argumentos de la lista de comandos.
      */
     public static void main(String[] args) {
 
-        //Se crea una institución y un conjunto de ArrayLists para cada tipo de persona
+        //Se crea la institución protagonista.
         Institucion ins1 = new Institucion(null, null,
                 null, null, null, 0);
 
@@ -62,7 +63,7 @@ public class Programa {
                     Logro l1 = v1.getLogro();
                     logros.add(l1);
                     int dueño = v1.getDueño();
-                    niños.get(dueño).añadirLogro(l1);
+                    niños.get(dueño).asignarLogro(l1);
                 }
             }
         });
@@ -70,17 +71,13 @@ public class Programa {
         ven1.getjButtonGenerarReporte().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GenerarReporte v1 = new GenerarReporte(null, true);
+                GenerarRegistro v1 = new GenerarRegistro(null, true);
                 v1.setArrays(niños, profesores, logros);
                 v1.rellenarBoxes();
                 v1.setVisible(true);
                 if (v1.isSeñal()) {
                     Registro r1 = v1.getRegistro();
-                    registrar(r1);
-                    boolean[] pos = r1.getNiño().buscarDesempeño();
-                    for (boolean po : pos) {
-                        System.out.println(po);
-                    }
+                    r1.getNiño().asignarRegistro(r1);
                 }
             }
         });
@@ -308,21 +305,7 @@ public class Programa {
     }
 
     public static void registrar(Registro r) {
-        boolean ag = false;
-        Registro[] registros = r.getNiño().getRegistros();
-        if (registros[r.getMes()] == null || registros[r.getMes()].getAño() < r.getAño() || (registros[r.getMes()].getDia() < r.getDia() && registros[r.getMes()].getAño() <= r.getAño())) {
-            registros[r.getMes()] = r;
-        } else {
-            for (int i = 0; i < registros[r.getMes()].getLogros().size(); i++) {
-                if (r.getLogros().get(0) != registros[r.getMes()].getLogros().get(i)) {
-                    ag = true;
-                }
-            }
-            if (ag) {
-                registros[r.getMes()].getLogros().add(r.getLogros().get(0));
-            }
-        }
-        r.getNiño().setRegistros(registros);
+        
     }
 
     public static void setIsConfigurado(boolean b) {

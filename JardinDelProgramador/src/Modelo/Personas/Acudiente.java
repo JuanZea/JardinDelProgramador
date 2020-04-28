@@ -1,16 +1,17 @@
 package Modelo.Personas;
 
+import java.util.ArrayList;
+
 /**
- * Esta clase representa a el acudiente de un niño, el cual puede ser un pariente,
- * tendra una hora de recogida definida por seguridad y orden, tendra la direccion de
- * residencia que puede ser la del niño si vive con el, y como medio de comunicacion
- * un numero de celular.
+ * Esta clase representa a el acudiente de un niño.
+ *
  * @author JuanZea
- * @version 1.0.0
+ * @version 1.0.1
  * @since Jardin 1.0.0
  */
 public class Acudiente extends Persona {
 
+    ArrayList<Niño> niños;
     private String horarioDeRecogida;
     private String parentesco;
     private String direccion;
@@ -19,12 +20,16 @@ public class Acudiente extends Persona {
     public Acudiente() {
     }
 
-    public Acudiente(String horarioDeRecogida, String parentesco, String direccion, String celular, String nombre, String tipoDeDocumento, String id, String edad) {
-        super(nombre, tipoDeDocumento, id, edad);
+    public Acudiente(String horarioDeRecogida, String parentesco, String direccion, String celular, String nombre, String edad, String tipoDeDocumento, String id) {
+        super(nombre, edad, tipoDeDocumento, id);
         this.horarioDeRecogida = horarioDeRecogida;
         this.parentesco = parentesco;
         this.direccion = direccion;
         this.celular = celular;
+    }
+    
+    public void asignarNiño(Niño niño){
+        this.niños.add(niño);
     }
 
     public String getHorarioDeRecogida() {

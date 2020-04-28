@@ -10,6 +10,8 @@ import Modelo.Personas.Niño;
 import Modelo.Personas.Profesor;
 import Modelo.Registro;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,7 +20,7 @@ import javax.swing.JOptionPane;
  *
  * @author JuanZea
  */
-public class GenerarReporte extends javax.swing.JDialog {
+public class GenerarRegistro extends javax.swing.JDialog {
 
     private ArrayList<Niño> niños;
     private ArrayList<Profesor> profesores;
@@ -30,10 +32,10 @@ public class GenerarReporte extends javax.swing.JDialog {
      * Esta clase representa una ventana para generar un objeto de la clase reporte.
      *
      * @author JuanZea
-     * @version 1.0.0
+     * @version 1.0.1
      * @since Jardin 1.0.2
      */
-    public GenerarReporte(java.awt.Frame parent, boolean modal) {
+    public GenerarRegistro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -54,8 +56,8 @@ public class GenerarReporte extends javax.swing.JDialog {
     }
 
     public void rellenarLogros(int i) {
-        DefaultComboBoxModel box = new DefaultComboBoxModel();
-        jComboLogro.setModel(box);
+        DefaultComboBoxModel limpiar = new DefaultComboBoxModel();
+        jComboLogro.setModel(limpiar);
         for (int j = 0; j < niños.get(i).getLogros().size(); j++) {
             jComboLogro.addItem(niños.get(i).getLogros().get(j).getNombre());
         }
@@ -80,14 +82,9 @@ public class GenerarReporte extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jComboLogroValoracion = new javax.swing.JComboBox<>();
-        jComboDia = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        jComboMes = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jComboAño = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
         jButtonGenerar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         javax.swing.JLabel jLabelFondo6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -126,28 +123,7 @@ public class GenerarReporte extends javax.swing.JDialog {
         jLabel4.setText("Valoracion:");
         jLabel4.setOpaque(true);
 
-        jComboLogroValoracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dificultad", "Aceptable", "Capaz", "Muy Capaz" }));
-
-        jComboDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "15" }));
-
-        jLabel5.setBackground(java.awt.Color.orange);
-        jLabel5.setForeground(java.awt.Color.black);
-        jLabel5.setText("Dia:");
-        jLabel5.setOpaque(true);
-
-        jComboMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
-
-        jLabel6.setBackground(java.awt.Color.orange);
-        jLabel6.setForeground(java.awt.Color.black);
-        jLabel6.setText("Mes:");
-        jLabel6.setOpaque(true);
-
-        jComboAño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
-
-        jLabel7.setBackground(java.awt.Color.orange);
-        jLabel7.setForeground(java.awt.Color.black);
-        jLabel7.setText("Año:");
-        jLabel7.setOpaque(true);
+        jComboLogroValoracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Incapaz", "Medianamente competente", "Competente", "Capaz", "Crack" }));
 
         jButtonGenerar.setText("Generar");
         jButtonGenerar.addActionListener(new java.awt.event.ActionListener() {
@@ -163,6 +139,8 @@ public class GenerarReporte extends javax.swing.JDialog {
             }
         });
 
+        jCalendar1.setDecorationBackgroundColor(java.awt.Color.orange);
+
         javax.swing.GroupLayout jPanelHojaLayout = new javax.swing.GroupLayout(jPanelHoja);
         jPanelHoja.setLayout(jPanelHojaLayout);
         jPanelHojaLayout.setHorizontalGroup(
@@ -171,79 +149,52 @@ public class GenerarReporte extends javax.swing.JDialog {
                 .addGap(30, 30, 30)
                 .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHojaLayout.createSequentialGroup()
-                        .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jComboBoxProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelHojaLayout.createSequentialGroup()
-                        .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jComboDia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboEstudiante, 0, 155, Short.MAX_VALUE))
-                            .addComponent(jLabel5))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jComboMes, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboLogro, javax.swing.GroupLayout.Alignment.LEADING, 0, 155, Short.MAX_VALUE))
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jComboLogroValoracion, javax.swing.GroupLayout.Alignment.LEADING, 0, 155, Short.MAX_VALUE))
-                            .addComponent(jLabel7)
-                            .addComponent(jComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(120, 120, 120))
-                    .addGroup(jPanelHojaLayout.createSequentialGroup()
                         .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButtonCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonGenerar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHojaLayout.createSequentialGroup()
+                                .addComponent(jButtonGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonCancelar))
+                            .addComponent(jComboLogroValoracion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxProfesor, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboEstudiante, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboLogro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
         );
         jPanelHojaLayout.setVerticalGroup(
             jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHojaLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelHojaLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboLogro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelHojaLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(20, 20, 20)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelHojaLayout.createSequentialGroup()
+                        .addComponent(jComboEstudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboLogro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboLogroValoracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelHojaLayout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelHojaLayout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jComboMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelHojaLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(29, 29, 29)
-                .addComponent(jButtonGenerar)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonCancelar)
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addComponent(jComboLogroValoracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanelHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonGenerar)
+                            .addComponent(jButtonCancelar)))
+                    .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         jPanelBase.add(jPanelHoja);
@@ -257,11 +208,11 @@ public class GenerarReporte extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
 
         pack();
@@ -284,14 +235,15 @@ public class GenerarReporte extends javax.swing.JDialog {
         if (jComboBoxProfesor.getSelectedIndex() == -1 || jComboEstudiante.getSelectedIndex() == -1 || jComboLogro.getSelectedIndex() == -1) {
             JOptionPane.showMessageDialog(null, "Hacen uno o varios datos");
         } else {
-            int dia = jComboDia.getSelectedIndex();
-            int mes = jComboMes.getSelectedIndex();
-            int año = jComboAño.getSelectedIndex();
+            int dia = jCalendar1.getDayChooser().getDay();
+            int mes = jCalendar1.getMonthChooser().getMonth();
+            int año = jCalendar1.getYearChooser().getYear();
             Profesor profesor = profesores.get(jComboBoxProfesor.getSelectedIndex());
             Niño niño = niños.get(jComboEstudiante.getSelectedIndex());
             Logro logro = logros.get(jComboLogro.getSelectedIndex());
             int valoracion = jComboLogroValoracion.getSelectedIndex();
-            registro = new Registro(dia, mes, año, profesor, niño, logro, valoracion);
+            Calendar calendar = new GregorianCalendar(año, mes, dia);
+            registro = new Registro(calendar, profesor, niño, logro, valoracion);
             señal = true;
             this.setVisible(false);
         }
@@ -314,20 +266,20 @@ public class GenerarReporte extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GenerarReporte.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerarRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                GenerarReporte dialog = new GenerarReporte(new javax.swing.JFrame(), true);
+                GenerarRegistro dialog = new GenerarRegistro(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -342,20 +294,15 @@ public class GenerarReporte extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGenerar;
-    private javax.swing.JComboBox<String> jComboAño;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JComboBox<String> jComboBoxProfesor;
-    private javax.swing.JComboBox<String> jComboDia;
     private javax.swing.JComboBox<String> jComboEstudiante;
     private javax.swing.JComboBox<String> jComboLogro;
     private javax.swing.JComboBox<String> jComboLogroValoracion;
-    private javax.swing.JComboBox<String> jComboMes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanelBase;
     private javax.swing.JPanel jPanelHoja;
     // End of variables declaration//GEN-END:variables
