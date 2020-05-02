@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Esta clase representa una ventana que recopila informacion sobre un profesor
+ *
  * @author JuanZea
- * @version 1.0.1
+ * @version 1.0.2
  * @since Jardin 1.0.0
  */
 public class AñadirProfesor extends javax.swing.JDialog {
@@ -20,7 +21,9 @@ public class AñadirProfesor extends javax.swing.JDialog {
     private boolean señal = false;
 
     /**
-     * Esta clase representa una ventana que permite registrar datos de los profesores
+     * Esta clase representa una ventana que permite registrar datos de los
+     * profesores
+     *
      * @param parent El form
      * @param modal El modal
      */
@@ -212,7 +215,7 @@ public class AñadirProfesor extends javax.swing.JDialog {
         datos[5] = jTextFieldId.getText();
         datos[6] = jTextFieldEdad.getText();
         if (jTextFieldUniversidad.getText().isBlank() || jTextFieldNombre.getText().isBlank() || jTextFieldTipoDocumento.getText().isBlank() || jTextFieldId.getText().isBlank() || jTextFieldEdad.getText().isBlank()) {
-            JOptionPane.showMessageDialog(null, "Hacen uno o varios datos");
+            JOptionPane.showMessageDialog(null, "Hacen falta uno o varios datos");
         } else {
             señal = true;
             this.setVisible(false);

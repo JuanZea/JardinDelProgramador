@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Esta clase representa una ventana que recopila los datos de un acudiente
+ *
  * @author JuanZea
- * @version 1.0.0
+ * @version 1.0.1
  * @since Jardin 1.0.1
  */
 public class AñadirAcudiente extends javax.swing.JDialog {
@@ -20,7 +21,9 @@ public class AñadirAcudiente extends javax.swing.JDialog {
     private boolean señal = false;
 
     /**
-     * Esta clase representa una ventana que permite registrar datos de los profesores
+     * Esta clase representa una ventana que permite registrar datos de los
+     * profesores
+     *
      * @param parent El form
      * @param modal El modal
      */
@@ -211,7 +214,7 @@ public class AñadirAcudiente extends javax.swing.JDialog {
         datos[6] = jTextFieldId.getText();
         datos[7] = jTextFieldEdad.getText();
         if (jTextFieldHorario.getText().isBlank() || jTextFieldDireccion.getText().isBlank() || jTextFieldCelular.getText().isBlank() || jTextFieldNombre.getText().isBlank() || jTextFieldTipoDocumento.getText().isBlank() || jTextFieldId.getText().isBlank() || jTextFieldEdad.getText().isBlank()) {
-            JOptionPane.showMessageDialog(null, "Hacen uno o varios datos");
+            JOptionPane.showMessageDialog(null, "Hacen falta uno o varios datos");
         } else {
             señal = true;
             this.setVisible(false);

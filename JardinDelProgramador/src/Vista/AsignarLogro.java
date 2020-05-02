@@ -13,8 +13,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Esta clase representa una ventana que asigna un logro a un niño
+ *
  * @author JuanZea
- * @version 1.0.0
+ * @version 1.0.1
  * @since Jardin 1.0.2
  */
 public class AsignarLogro extends javax.swing.JDialog {
@@ -167,7 +168,7 @@ public class AsignarLogro extends javax.swing.JDialog {
 
     private void jButtonAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAsignarActionPerformed
         if (jComboBoxEstudiante.getSelectedIndex() == -1 || jTextFieldNombreLogro.getText().isBlank() || jComboCategoria.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(null, "Hacen uno o varios datos");
+            JOptionPane.showMessageDialog(null, "Hacen falta uno o varios datos");
         } else {
             String nombre = jTextFieldNombreLogro.getText();
             String categoria = jComboCategoria.getItemAt(jComboCategoria.getSelectedIndex());

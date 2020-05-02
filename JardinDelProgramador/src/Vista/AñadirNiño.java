@@ -12,8 +12,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Esta clase representa una ventana que recopila los datos de un niño
+ *
  * @author JuanZea
- * @version 1.0.0
+ * @version 1.0.1
  * @since Jardin 1.0.1
  */
 public class AñadirNiño extends javax.swing.JDialog {
@@ -22,7 +23,9 @@ public class AñadirNiño extends javax.swing.JDialog {
     private boolean señal = false;
 
     /**
-     * Esta clase representa una ventana que permite registrar datos de los profesores
+     * Esta clase representa una ventana que permite registrar datos de los
+     * profesores
+     *
      * @param parent El form
      * @param modal El modal
      */
@@ -101,6 +104,8 @@ public class AñadirNiño extends javax.swing.JDialog {
                 jButtonAceptarActionPerformed(evt);
             }
         });
+
+        jTextFieldSituacion.setText("NA");
 
         jLabelAcudiente.setForeground(java.awt.Color.black);
         jLabelAcudiente.setText("Acudiente");
@@ -226,8 +231,8 @@ public class AñadirNiño extends javax.swing.JDialog {
         datos[5] = jTextFieldId.getText();
         datos[6] = jTextFieldEdad.getText();
         datos[7] = String.valueOf(jComboBoxAcudiente.getSelectedIndex());
-        if (jComboBoxAcudiente.getSelectedIndex() == -1 ||jTextFieldSituacion.getText().isBlank() || jTextFieldTalla.getText().isBlank() || jTextFieldPeso.getText().isBlank() || jTextFieldNombre.getText().isBlank() || jTextFieldTipoDocumento.getText().isBlank() || jTextFieldId.getText().isBlank() || jTextFieldEdad.getText().isBlank()) {
-            JOptionPane.showMessageDialog(null, "Hacen uno o varios datos");
+        if (jComboBoxAcudiente.getSelectedIndex() == -1 || jTextFieldSituacion.getText().isBlank() || jTextFieldTalla.getText().isBlank() || jTextFieldPeso.getText().isBlank() || jTextFieldNombre.getText().isBlank() || jTextFieldTipoDocumento.getText().isBlank() || jTextFieldId.getText().isBlank() || jTextFieldEdad.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Hacen falta uno o varios datos");
         } else {
             señal = true;
             this.setVisible(false);

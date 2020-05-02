@@ -8,14 +8,14 @@ import java.util.Calendar;
  * Esta clase representa a un niño matriculado en la institución.
  *
  * @author JuanZea
- * @version 1.0.3
+ * @version 1.0.4
  * @since Jardin 1.0.0
  */
 public class Niño extends Persona {
 
     private String talla;
     private String peso;
-    private String situacionEspecial = "NA";
+    private String situacionEspecial;
     private ArrayList<Logro> logros = new ArrayList<Logro>();
     private ArrayList<Acudiente> acudientes = new ArrayList<Acudiente>();
     private ArrayList<Registro> registros = new ArrayList<Registro>();
@@ -48,11 +48,9 @@ public class Niño extends Persona {
         for (int i = 0; i < this.registros.size() - 1; i++) {
             int añoI = registros.get(i).getFecha().get(Calendar.YEAR);
             int mesI = registros.get(i).getFecha().get(Calendar.MONTH);
-            int diaI = registros.get(i).getFecha().get(Calendar.DAY_OF_MONTH);
             for (int j = i + 1; j < this.registros.size(); j++) {
                 int añoJ = registros.get(j).getFecha().get(Calendar.YEAR);
                 int mesJ = registros.get(j).getFecha().get(Calendar.MONTH);
-                int diaJ = registros.get(j).getFecha().get(Calendar.DAY_OF_MONTH);
                 if (añoI == añoJ && mesesCompatibles(mesI, mesJ)) {
                     generarDesempeño(registros.get(i), registros.get(j));
                 }
@@ -108,7 +106,7 @@ public class Niño extends Persona {
         this.desempeñoActualizado = false;
         this.logros.add(logro);
     }
-    
+
     public void asignarRegistro(Registro registro) {
         this.desempeñoActualizado = false;
         this.registros.add(registro);

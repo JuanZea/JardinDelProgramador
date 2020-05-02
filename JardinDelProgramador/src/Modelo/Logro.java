@@ -19,10 +19,10 @@ public class Logro {
     /**
      *
      * @param nombre Indica el nombre del logro.
-     * @param categoria Indica la categoria del logro. Solo puede ser:(Desarrollo de
-     * pensamiento lógico matematico, Desarrolo de habilidades de análisis,
-     * Desarrolo de habilidades de pensamiento sistémico, Desarrolo de
-     * pensamiento creativo).
+     * @param categoria Indica la categoria del logro. Solo puede
+     * ser:(Desarrollo de pensamiento lógico matematico, Desarrolo de
+     * habilidades de análisis, Desarrolo de habilidades de pensamiento
+     * sistémico, Desarrolo de pensamiento creativo).
      * @param objetivo Indica si el logro se concidera como cumplido.
      */
     public Logro(String nombre, String categoria, boolean objetivo) {

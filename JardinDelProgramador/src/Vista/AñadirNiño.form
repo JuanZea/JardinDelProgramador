@@ -252,6 +252,9 @@
         <Component class="javax.swing.JTextField" name="jTextFieldTalla">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldSituacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NA"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelAcudiente">
           <Properties>
