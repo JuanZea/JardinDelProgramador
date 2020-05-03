@@ -1,12 +1,13 @@
 package Modelo.Personas;
 
 /**
- * Esta clase representa a un profesor del jardin, tendra como atributos: el semestre
- * y universidad respectivas ya que el profesor es un estudiante universitario de hasta
- * quinto semetre, ademas tendra una especialidad ligada a una categoria de la clase
- * logro.
+ * Esta clase representa a un profesor del jardin, tendra como atributos: el
+ * semestre y universidad respectivas ya que el profesor es un estudiante
+ * universitario de hasta quinto semetre, ademas tendra una especialidad ligada
+ * a una categoria de la clase logro.
+ *
  * @author JuanZea
- * @version 1.0.0
+ * @version 1.0.1
  * @since Jardin 1.0.0
  */
 public class Profesor extends Persona {
@@ -16,7 +17,7 @@ public class Profesor extends Persona {
     private String universidad;
 
     public Profesor(int semestre, String especialidad, String universidad, String nombre, String tipoDeDocumento, String id, String edad) {
-        super(nombre, tipoDeDocumento, id, edad);
+        super(nombre, edad, tipoDeDocumento, id);
         this.semestre = semestre;
         this.especialidad = especialidad;
         this.universidad = universidad;

@@ -27,8 +27,8 @@ public class Acudiente extends Persona {
         this.direccion = direccion;
         this.celular = celular;
     }
-    
-    public void asignarNiño(Niño niño){
+
+    public void asignarNiño(Niño niño) {
         this.niños.add(niño);
     }
 

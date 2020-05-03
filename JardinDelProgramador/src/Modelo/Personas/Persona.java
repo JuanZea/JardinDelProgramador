@@ -17,9 +17,9 @@ public class Persona {
 
     public Persona() {
     }
-    
+
     /**
-     * 
+     *
      * @param nombre Indica el nombre de la persona.
      * @param edad Indica la edad de una persona.
      * @param tipoDeDocumento Indica el tipo de documento de la persona.

@@ -15,12 +15,17 @@ import javax.swing.ImageIcon;
  * @since Jardin 1.0.0
  */
 public class Ventana extends javax.swing.JFrame {
-
+    
+    private int emblema = 0;
     /**
      * Creates new form MenuPrincipal
      */
     public Ventana() {
         initComponents();
+        buttonGroup.add(jRadioButton1);
+        buttonGroup.add(jRadioButton2);
+        buttonGroup.add(jRadioButton3);
+        buttonGroup.add(jRadioButton4);
     }
 
     /**
@@ -32,6 +37,7 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup = new javax.swing.ButtonGroup();
         jTabbedPanePrincipal = new javax.swing.JTabbedPane();
         jPanelMenuPrincipal = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -92,6 +98,11 @@ public class Ventana extends javax.swing.JFrame {
         btnLimpiarC = new javax.swing.JButton();
         btnGuardarC = new javax.swing.JButton();
         btnTestearC = new javax.swing.JButton();
+        lblNombre6 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
         jLabelFondo1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -182,12 +193,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelListaProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabelListaProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonEliminarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonEditarProfesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -265,12 +274,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanelNiños1Layout.setHorizontalGroup(
             jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNiños1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelListaNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelNiños1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabelListaNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelNiños1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
                         .addGroup(jPanelNiños1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonEliminarNiño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonEditarNiño, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -348,12 +355,10 @@ public class Ventana extends javax.swing.JFrame {
         jPanelAcudientes1Layout.setHorizontalGroup(
             jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabelListaAcudientes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabelListaAcudientes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelAcudientes1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
                         .addGroup(jPanelAcudientes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtonEliminarAcudiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonEditarAcudiente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -444,6 +449,27 @@ public class Ventana extends javax.swing.JFrame {
         btnTestearC.setBackground(java.awt.Color.orange);
         btnTestearC.setText("Testear");
 
+        lblNombre6.setBackground(java.awt.Color.orange);
+        lblNombre6.setForeground(java.awt.Color.black);
+        lblNombre6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblNombre6.setText("EMBLEMA DE LA INSTITUCIÓN:");
+
+        jRadioButton1.setForeground(java.awt.Color.black);
+        jRadioButton1.setText("Emblema 1");
+        jRadioButton1.setOpaque(false);
+
+        jRadioButton2.setForeground(java.awt.Color.black);
+        jRadioButton2.setText("Emblema 2");
+        jRadioButton2.setOpaque(false);
+
+        jRadioButton3.setForeground(java.awt.Color.black);
+        jRadioButton3.setText("Emblema 3");
+        jRadioButton3.setOpaque(false);
+
+        jRadioButton4.setForeground(java.awt.Color.black);
+        jRadioButton4.setText("Emblema default");
+        jRadioButton4.setOpaque(false);
+
         javax.swing.GroupLayout jPanelConfiguracionLayout = new javax.swing.GroupLayout(jPanelConfiguracion);
         jPanelConfiguracion.setLayout(jPanelConfiguracionLayout);
         jPanelConfiguracionLayout.setHorizontalGroup(
@@ -453,15 +479,15 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
                         .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombre1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNombre2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNombre3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNombre4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblNombre5, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addContainerGap(298, Short.MAX_VALUE)
+                                .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNombre1)
+                                    .addComponent(lblNombre2)
+                                    .addComponent(lblNombre3)
+                                    .addComponent(lblNombre4)
+                                    .addComponent(lblNombre5)))
                             .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
-                                .addGap(29, 249, Short.MAX_VALUE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblNombre)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -471,11 +497,22 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(txtFDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtFCaracter, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnTestearC)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelConfiguracionLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnTestearC))
+                            .addGroup(jPanelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(lblNombre6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnGuardarC)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnLimpiarC)))))
@@ -511,9 +548,15 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiarC)
-                    .addComponent(btnGuardarC))
+                    .addComponent(btnGuardarC)
+                    .addComponent(lblNombre6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnTestearC)
+                .addGroup(jPanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTestearC)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -583,6 +626,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarC;
     private javax.swing.JButton btnLimpiarC;
     private javax.swing.JButton btnTestearC;
+    private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JButton jButtonAsignarLogro;
     private javax.swing.JButton jButtonAñadirAcudiente;
     private javax.swing.JButton jButtonAñadirNiño;
@@ -619,6 +663,10 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelNiños;
     private javax.swing.JPanel jPanelNiños1;
     private javax.swing.JPanel jPanelProfesores;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -635,6 +683,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre3;
     private javax.swing.JLabel lblNombre4;
     private javax.swing.JLabel lblNombre5;
+    private javax.swing.JLabel lblNombre6;
     private javax.swing.JTextField txtFAño;
     private javax.swing.JTextField txtFCaracter;
     private javax.swing.JTextField txtFDireccion;
@@ -749,5 +798,33 @@ public class Ventana extends javax.swing.JFrame {
 
     public javax.swing.JButton getBtnTestearC() {
         return btnTestearC;
+    }
+
+    public javax.swing.ButtonGroup getButtonGroup() {
+        return buttonGroup;
+    }
+
+    public int getEmblema() {
+        return emblema;
+    }
+
+    public javax.swing.JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public javax.swing.JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public javax.swing.JRadioButton getjRadioButton3() {
+        return jRadioButton3;
+    }
+
+    public javax.swing.JRadioButton getjRadioButton4() {
+        return jRadioButton4;
+    }
+
+    public void setEmblema(int emblema) {
+        this.emblema = emblema;
     }
 }

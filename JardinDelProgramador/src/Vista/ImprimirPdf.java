@@ -7,18 +7,20 @@ package Vista;
 
 import java.io.File;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  * Esta clase representa una ventana que permite imprimir el archivo pdf con el
  * desempeño de un niño.
  *
  * @author JuanZea
- * @version 1.0.4
+ * @version 1.0.5
  * @since Jardin 1.0.0
  */
 public class ImprimirPdf extends javax.swing.JDialog {
 
     private boolean señal = false;
+    private String ruta = null;
 
     /**
      * Creates new form ImprimirPdf
@@ -45,6 +47,7 @@ public class ImprimirPdf extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jComboBoxNiños = new javax.swing.JComboBox<>();
         jButtonImprimir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabelFondo7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -81,27 +84,30 @@ public class ImprimirPdf extends javax.swing.JDialog {
             }
         });
 
+        jLabel3.setBackground(java.awt.Color.orange);
+        jLabel3.setForeground(java.awt.Color.black);
+        jLabel3.setText("Nombre del archivo Pdf:");
+        jLabel3.setOpaque(true);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBoxNiños, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(61, 61, 61)
-                                .addComponent(jButtonGuardar))
-                            .addComponent(jTextFieldRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonImprimir)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButtonCancelar)))
+                        .addComponent(jButtonGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelar))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jComboBoxNiños, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonImprimir))
+                        .addComponent(jTextFieldRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(385, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -112,14 +118,16 @@ public class ImprimirPdf extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxNiños, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonGuardar))
+                    .addComponent(jButtonImprimir))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jTextFieldRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonImprimir)
-                    .addComponent(jButtonCancelar))
-                .addContainerGap(219, Short.MAX_VALUE))
+                    .addComponent(jButtonCancelar)
+                    .addComponent(jButtonGuardar))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         jPanelBase.add(jPanel1);
@@ -137,7 +145,7 @@ public class ImprimirPdf extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+            .addComponent(jPanelBase, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
         );
 
         pack();
@@ -149,13 +157,19 @@ public class ImprimirPdf extends javax.swing.JDialog {
         int option = dlg.showSaveDialog(this);
         if (option == JFileChooser.APPROVE_OPTION) {
             File f = dlg.getSelectedFile();
-            jTextFieldRuta.setText(f.toString());
+            ruta = f.toString();
+            señal = true;
+            this.setVisible(false);
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     private void jButtonImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImprimirActionPerformed
-        señal = true;
-        this.setVisible(false);
+        if (jTextFieldRuta.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null, "Selecione un nombre para el archivo o añadalo");
+        } else {
+            señal = true;
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonImprimirActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
@@ -210,6 +224,7 @@ public class ImprimirPdf extends javax.swing.JDialog {
     private javax.swing.JButton jButtonImprimir;
     private javax.swing.JComboBox<String> jComboBoxNiños;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelFondo7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBase;
@@ -230,5 +245,9 @@ public class ImprimirPdf extends javax.swing.JDialog {
 
     public boolean isSeñal() {
         return señal;
+    }
+
+    public String getRuta() {
+        return ruta;
     }
 }

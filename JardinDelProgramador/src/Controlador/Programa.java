@@ -21,7 +21,7 @@ import javax.swing.event.ListSelectionListener;
  * una de las clases vitales.
  *
  * @author JuanZea
- * @version 1.0.3
+ * @version 1.0.4
  * @since Jardin 1.0.0
  */
 public class Programa {
@@ -111,7 +111,7 @@ public class Programa {
                     }
                     v1.setVisible(true);
                     if (v1.isSeñal()) {
-                        generarPdf(institucion, v1.getjComboBoxNiños().getSelectedIndex(), v1.getjTextFieldRuta().getText());
+                        generarPdf(institucion, v1.getjComboBoxNiños().getSelectedIndex(), v.getEmblema(), v1.getjTextFieldRuta().getText(), v1.getRuta());
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Primero debe guardar datos en la configuración.");
@@ -140,6 +140,10 @@ public class Programa {
                     v.getTxtFAño().setEditable(false);
                     v.getTxtFDireccion().setEditable(false);
                     v.getTxtFNit().setEditable(false);
+                    v.getjRadioButton1().setEnabled(false);
+                    v.getjRadioButton2().setEnabled(false);
+                    v.getjRadioButton3().setEnabled(false);
+                    v.getjRadioButton4().setEnabled(false);
                     //Guardamos los datos
                     institucion.setNombre(v.getTxtFNombre().getText());
                     institucion.setCaracter(v.getTxtFCaracter().getText());
@@ -147,6 +151,24 @@ public class Programa {
                     institucion.setDireccion(v.getTxtFDireccion().getText());
                     institucion.setNit(v.getTxtFNit().getText());
                     setIsConfigurado(true);
+                    if (v.getjRadioButton1().isSelected()) {
+                        v.setEmblema(1);
+                    } else {
+                        if (v.getjRadioButton2().isSelected()) {
+                            v.setEmblema(2);
+                        } else {
+                            if (v.getjRadioButton3().isSelected()) {
+                                v.setEmblema(3);
+                            } else {
+                                if (v.getjRadioButton4().isSelected()) {
+                                    v.setEmblema(0);
+                                } else {
+                                    v.setEmblema(0);
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
         });
@@ -162,6 +184,10 @@ public class Programa {
                 v.getTxtFAño().setEditable(true);
                 v.getTxtFDireccion().setEditable(true);
                 v.getTxtFNit().setEditable(true);
+                v.getjRadioButton1().setEnabled(true);
+                v.getjRadioButton2().setEnabled(true);
+                v.getjRadioButton3().setEnabled(true);
+                v.getjRadioButton4().setEnabled(true);
                 //Limpia los cuadros
                 v.getTxtFNombre().setText("");
                 v.getTxtFCaracter().setText("");
@@ -169,6 +195,7 @@ public class Programa {
                 v.getTxtFDireccion().setText("");
                 v.getTxtFNit().setText("");
                 setIsConfigurado(false);
+                v.getButtonGroup().clearSelection();
             }
         });
     }
@@ -193,7 +220,7 @@ public class Programa {
         v.getTxtFAño().setText("2000");
         v.getTxtFNit().setText("2901001007238750");
         institucion.setMatriculados(5);
-        v.getTxtFMatriculados().setText("5");
+        v.getTxtFMatriculados().setText(String.valueOf(Integer.parseInt(v.getTxtFMatriculados().getText()) + 5));
     }
 
     public static void rellenarAcudientes(Ventana v) {
@@ -554,6 +581,7 @@ public class Programa {
         if (v1.isSeñal()) {
             String[] datos = v1.getDatos();
             Niño n1 = new Niño(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], acudientes.get(Integer.parseInt(datos[7])));
+            acudientes.get(Integer.parseInt(datos[7])).setParentesco(v1.getjTextFieldParentesco().getText());
             return n1;
         }
         return null;
@@ -569,6 +597,9 @@ public class Programa {
         v1.getjTextFieldId().setText(niños.get(i).getId());
         v1.getjTextFieldTalla().setText(niños.get(i).getTalla());
         v1.getjTextFieldSituacion().setText(niños.get(i).getSituacionEspecial());
+        for (int j = 0; j < acudientes.size(); j++) {
+            v1.getjComboBoxAcudiente().addItem(acudientes.get(j).getNombre());
+        }
         v1.setVisible(true);
         if (v1.isSeñal()) {
             String[] datos = v1.getDatos();
@@ -635,28 +666,16 @@ public class Programa {
         return desc;
     }
 
-    public static void generarPdf(Institucion ins, int posicionNiño, String ruta) {
+    public static void generarPdf(Institucion institucion, int posicionNiño, int imagen, String nombre, String ruta) {
         GeneradorPdf pdf = new GeneradorPdf();
         Niño niño = niños.get(posicionNiño);
         if (!test) {
             niño.actualizarDesempeño();
         }
-        String obj;
         if (niño.getLogros().isEmpty()) {
             JOptionPane.showMessageDialog(null, "El niño no tiene logros asignados.");
             return;
         }
-        String info = "El avance de " + niño.getNombre() + " representado en bimestres fue el siguiente:\n";
-        for (int i = 0; i < niño.getLogros().size(); i++) {
-            obj = "No cumplido\n";
-            if (niño.getLogros().get(i).isObjetivo()) {
-                obj = "Cumplido\n";
-            }
-            String plus = "Logro#" + (i + 1) + ":\n"
-                    + niño.getLogros().get(i).getNombre() + ": " + obj;
-            info = info + plus;
-        }
-
-        pdf.GenerarPdf(niño.getNombre(), info, "footer", "C:\\Users\\ASUS\\Downloads\\ryan-wallace-azA1hLbjBBo-unsplash.jpg", ruta + ".pdf");
+        pdf.GenerarPdf(niño, institucion, imagen, nombre, ruta);
     }
 }

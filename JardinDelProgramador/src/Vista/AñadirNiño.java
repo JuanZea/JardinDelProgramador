@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * Esta clase representa una ventana que recopila los datos de un niño
  *
  * @author JuanZea
- * @version 1.0.1
+ * @version 1.0.2
  * @since Jardin 1.0.1
  */
 public class AñadirNiño extends javax.swing.JDialog {
@@ -62,6 +62,8 @@ public class AñadirNiño extends javax.swing.JDialog {
         jTextFieldSituacion = new javax.swing.JTextField();
         jLabelAcudiente = new javax.swing.JLabel();
         jComboBoxAcudiente = new javax.swing.JComboBox<>();
+        jLabelAcudiente1 = new javax.swing.JLabel();
+        jTextFieldParentesco = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Añadir Niño");
@@ -108,7 +110,10 @@ public class AñadirNiño extends javax.swing.JDialog {
         jTextFieldSituacion.setText("NA");
 
         jLabelAcudiente.setForeground(java.awt.Color.black);
-        jLabelAcudiente.setText("Acudiente");
+        jLabelAcudiente.setText("Acudiente:");
+
+        jLabelAcudiente1.setForeground(java.awt.Color.black);
+        jLabelAcudiente1.setText("Parentesco:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,15 +123,19 @@ public class AñadirNiño extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelAcudiente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxAcudiente, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonCancelar)
                         .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelAcudiente1)
+                            .addComponent(jLabelAcudiente))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldParentesco)
+                            .addComponent(jComboBoxAcudiente, 0, 138, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -196,7 +205,11 @@ public class AñadirNiño extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxAcudiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelAcudiente))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAcudiente1)
+                    .addComponent(jTextFieldParentesco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancelar)
                     .addComponent(jButtonAceptar))
@@ -296,10 +309,12 @@ public class AñadirNiño extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelAcudiente;
+    private javax.swing.JLabel jLabelAcudiente1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldEdad;
     private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldParentesco;
     private javax.swing.JTextField jTextFieldPeso;
     private javax.swing.JTextField jTextFieldSituacion;
     private javax.swing.JTextField jTextFieldTalla;
@@ -350,5 +365,9 @@ public class AñadirNiño extends javax.swing.JDialog {
         for (int i = 0; i < acudientes.size(); i++) {
             jComboBoxAcudiente.addItem(acudientes.get(i).getNombre());
         }
+    }
+
+    public javax.swing.JTextField getjTextFieldParentesco() {
+        return jTextFieldParentesco;
     }
 }

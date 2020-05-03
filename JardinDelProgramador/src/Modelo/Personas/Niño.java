@@ -8,7 +8,7 @@ import java.util.Calendar;
  * Esta clase representa a un niño matriculado en la institución.
  *
  * @author JuanZea
- * @version 1.0.4
+ * @version 1.0.5
  * @since Jardin 1.0.0
  */
 public class Niño extends Persona {
@@ -33,7 +33,7 @@ public class Niño extends Persona {
      * @param acudiente Indica el acudiente que debe tener el niño como mínimo.
      */
     public Niño(String talla, String peso, String situacionEspecial, String nombre, String tipoDeDocumento, String id, String edad, Acudiente acudiente) {
-        super(nombre, tipoDeDocumento, id, edad);
+        super(nombre, edad, tipoDeDocumento, id);
         this.talla = talla;
         this.peso = peso;
         this.situacionEspecial = situacionEspecial;
